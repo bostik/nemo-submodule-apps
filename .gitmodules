@@ -1,0 +1,12 @@
+[submodule "calculator"]
+	path = calculator
+	url = git://github.com/nemomobile/qmlcalc.git
+[submodule "calendar"]
+	path = calendar
+	url = git://github.com/nemomobile/qmlcalendar.git
+[submodule "gallery"]
+	path = gallery
+	url = git://github.com/nemomobile/qmlgallery.git
+[submodule "mail"]
+	path = mail
+	url = git://github.com/nemomobile/qmlmail.git
