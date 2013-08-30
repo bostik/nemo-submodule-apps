@@ -6,7 +6,7 @@ MASTER_REPO_URI="git://github.com/nemomobile"
 # We only need to list the names of the subdirectories here, since the
 # actual repository details are in .gitmodules, and are used from there
 # as needed.
-SUBMODULE_REPOS="calculator calendar gallery mail"
+SUBMODULE_REPOS="calculator calendar gallery mail maps"
 
 # Set up the submodules.
 # If there are new ones since last run, add them to locally known set

@@ -4,5 +4,6 @@ SUBDIRS += \
     calculator \
     calendar \
     gallery \
+    maps \
     mail
 
