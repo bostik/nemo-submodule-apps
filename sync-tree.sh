@@ -19,7 +19,6 @@ for item in ${SUBMODULE_REPOS}; do
     fi
 done
 
-
 # TODO: purge local tree for submodules that no longer exist
 
 
@@ -30,4 +29,17 @@ git submodule sync
 # Clone and checkout the submodule trees
 git submodule update
 
+
+# Qt has its own ideas how subdirs should have their project files
+# named. Basically, a subdir 'foobar' needs to have 'foobar/foobar.pro'
+# in it for qmake's automatic recursion to work.
+for pfile in $(find . -mindepth 2 -maxdepth 2 -name '*.pro'); do
+    _pro=${pfile##*/}
+    _tmp=${pfile#*/}
+    _dir=${_tmp%/*}
+    if [ ! -e ${_dir}/${_dir}.pro ]; then
+        # Create $SUBDIR.pro in the subdir
+        (cd ${_dir} && ln -s ${_pro} ${_dir}.pro)
+    fi
+done
 
